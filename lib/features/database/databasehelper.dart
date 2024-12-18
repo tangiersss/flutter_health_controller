@@ -141,11 +141,8 @@ class DatabaseHelper {
 
   Future<void> addSleepingHours(int hours, int dateId) async {
     final db = await database;
-    Stopwatch stopwatch = Stopwatch()..start();
 
     await db.insert('sleeping_hours', {'hours': hours, '_did': dateId});
-    stopwatch.stop();
-    print('Query time ${stopwatch.elapsedMilliseconds} ms');
   }
 
   Future<void> addStepsData(String steps, int dateId) async {
